@@ -1,16 +1,45 @@
+import React from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
+  const [players, setPlayers] = React.useState([
+    {
+      name: "Caleb",
+      id: 1,
+    },
+    {
+      name: "Sari",
+      id: 2,
+    },
+    {
+      name: "Matt",
+      id: 3,
+    },
+    {
+      name: "Greg",
+      id: 4,
+    },
+  ]);
+
+  const handleRemovePlayer = (id) => {
+    setPlayers((prevState) => prevState.filter((p) => p.id !== id));
+  };
+
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" totalPlayers={1} />
-      <Player playerName="Caleb" playerScore={0} />
-      <Player playerName="Sari" playerScore={1} />
-      <Player playerName="Matt" playerScore={0} />
-      <Player playerName="Greg" playerScore={0} />
+      <Header title="Scoreboard" totalPlayers={players.length} />
+
+      {players.map((players) => (
+        <Player
+          name={players.name}
+          id={players.id}
+          key={players.id.toString()}
+          removePlayer={handleRemovePlayer}
+        />
+      ))}
     </div>
   );
-}
+};
 
 function Header(props) {
   return (
@@ -24,20 +53,49 @@ function Header(props) {
 const Player = (props) => {
   return (
     <div className="player">
-      <span className="player-name"> {props.playerName} </span>
-      <Counter playerScore={props.playerScore} />
+      <span className="player-name">
+        <button
+          className="remove-player"
+          onClick={() => props.removePlayer(props.id)}
+        >
+          ✖
+        </button>
+        {props.name}
+      </span>
+
+      <Counter />
     </div>
   );
 };
 
-function Counter(props) {
+const Counter = () => {
+  const [score, setScore] = React.useState(0);
+
+  const incrementScore = () => {
+    setScore((prevScore) => prevScore + 1);
+  };
+
+  const decrementScore = () => {
+    setScore((prevScore) => prevScore - 1);
+  };
+
   return (
     <div className="counter">
-      <button className="counter-action decrement"> - </button>
-      <span className="counter-score">{props.playerScore}</span>
-      <button className="counter-action increment"> +</button>
+      <button
+        className="counter-action decrement"
+        onClick={() => decrementScore()}
+      >
+        -
+      </button>
+      <span className="counter-score">{score}</span>
+      <button
+        className="counter-action increment"
+        onClick={() => incrementScore()}
+      >
+        +
+      </button>
     </div>
   );
-}
+};
 
 export default App;
