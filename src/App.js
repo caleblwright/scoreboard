@@ -33,7 +33,7 @@ const App = () => {
     },
   ]);
 
-  const [nextPlayerId, setNextPlayerId] = useState(5);
+  const [nextPlayerId, setNextPlayerId] = useState(6);
 
   const handleRemovePlayer = (id) => {
     setPlayers((prevState) => prevState.filter((p) => p.id !== id));
