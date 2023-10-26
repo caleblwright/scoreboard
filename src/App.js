@@ -22,7 +22,7 @@ const App = () => {
       id: 3,
     },
     {
-      name: "Greg",
+      name: "Robert",
       score: 0,
       id: 4,
     },
