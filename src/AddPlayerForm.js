@@ -14,10 +14,10 @@ const AddPlayerForm = (props) => {
       <input
         type="text"
         value={value}
-        placeholder="Enter a player's name"
+        placeholder="Don't see your name? Add it here!"
         onChange={(e) => setValue(e.target.value)}
       />
-      <input type="submit" value="Add Plater" />
+      <input type="submit" value="Sign me up!" />
     </form>
   );
 };

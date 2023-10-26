@@ -26,6 +26,11 @@ const App = () => {
       score: 0,
       id: 4,
     },
+    {
+      name: "Jack",
+      score: 0,
+      id: 4,
+    },
   ]);
 
   const [nextPlayerId, setNextPlayerId] = useState(5);
@@ -64,7 +69,10 @@ const App = () => {
 
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" players={players} />
+      <Header
+        title="Vote for your favorite Halloween Costume!"
+        players={players}
+      />
 
       {players.map((players) => (
         <Player

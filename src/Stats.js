@@ -9,11 +9,11 @@ const Stats = (props) => {
     <table className="stats">
       <tbody>
         <tr>
-          <td>Players:</td>
+          <td>Contestants:</td>
           <td>{props.players.length}</td>
         </tr>
         <tr>
-          <td>Total Points:</td>
+          <td>Total Votes:</td>
           <td>{totalPoints}</td>
         </tr>
       </tbody>
