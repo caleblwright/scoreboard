@@ -22,13 +22,18 @@ const App = () => {
       id: 3,
     },
     {
-      name: "Greg",
+      name: "Robert",
       score: 0,
       id: 4,
     },
+    {
+      name: "Jack",
+      score: 0,
+      id: 5,
+    },
   ]);
 
-  const [nextPlayerId, setNextPlayerId] = useState(5);
+  const [nextPlayerId, setNextPlayerId] = useState(6);
 
   const handleRemovePlayer = (id) => {
     setPlayers((prevState) => prevState.filter((p) => p.id !== id));
@@ -64,7 +69,10 @@ const App = () => {
 
   return (
     <div className="scoreboard">
-      <Header title="Scoreboard" players={players} />
+      <Header
+        title="Vote for your favorite Halloween Costume!"
+        players={players}
+      />
 
       {players.map((players) => (
         <Player
