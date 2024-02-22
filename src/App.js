@@ -69,6 +69,10 @@ const App = () => {
 
   return (
     <div className="scoreboard">
+      <h1 id="firstheader">
+        Hi, my name is Caleb and this is my developmnet website. Thanks for
+        taking a look!
+      </h1>
       <Header
         title="Vote for your favorite Halloween Costume!"
         players={players}
