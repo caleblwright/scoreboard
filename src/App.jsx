@@ -69,10 +69,6 @@ const App = () => {
 
   return (
     <div className="scoreboard">
-      <h1 id="firstheader">
-        Hi, my name is Caleb and this is my developmnet website. Thanks for
-        taking a look!
-      </h1>
       <Header
         title="Vote for your favorite Halloween Costume!"
         players={players}
@@ -80,12 +76,10 @@ const App = () => {
 
       {players.map((players) => (
         <Player
-          name={players.name}
-          score={players.score}
-          id={players.id}
-          key={players.id.toString()}
+          {...players}
           removePlayer={handleRemovePlayer}
           changeScore={handleScoreChange}
+          key={players.id}
         />
       ))}
 
