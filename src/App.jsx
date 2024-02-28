@@ -7,27 +7,27 @@ import "./App.css";
 const App = () => {
   const [players, setPlayers] = useState([
     {
-      name: "Caleb",
+      name: "Caleb Wright",
       score: 0,
       id: 1,
     },
     {
-      name: "Sari",
+      name: "Sari Wisoff",
       score: 0,
       id: 2,
     },
     {
-      name: "Matt",
+      name: "Matthew Scott",
       score: 0,
       id: 3,
     },
     {
-      name: "Robert",
+      name: "Robert Schulte",
       score: 0,
       id: 4,
     },
     {
-      name: "Jack",
+      name: "Jack Babalian",
       score: 0,
       id: 5,
     },
